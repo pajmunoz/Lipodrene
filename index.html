@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Lipodrene</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body class="" ng-app="myApp">
+    <!-- FACEBOOK -->
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+    <!-- FACEBOOK -->
+    <div class="preload">
+        <div class="ed-container cross-center" style="height: 100%">
+            <div class="ed-item abcenter">
+                <figure>
+                    <img src="img/logo.png" alt="">
+                </figure>
+                <svg>
+                    <circle cx="90" cy="90" r="50">
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div id="men-top">
+    <div class="icon-menu"></div>
+</div>-->
+    <div class="square hasta-web"></div>
+    <div class="menu-ico-resp hasta-web">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div id="menu">
+        <div class="ed-container">
+            <div class="ed-item menu no-padding">
+                <div class="ed-container menu-resp">
+                    <div class="ed-item base-20 web-20 logo no-padding desde-web" style="position:relative;">
+                        <figure>
+                            <!-- <img src="img/logo2.png" alt=""> --></figure>
+                        <div class="fb-like desde-web" data-href="https://www.facebook.com/MundoNaturalHoy?fref=ts" data-layout="button_count" style="position: absolute;top: 0%;right: -70px;"></div>
+                    </div>
+                    <div class="ed-item web-70 no-padding">
+                        <ul class="ed-container menu-top">
+                            <li class="ed-item"><a href="#tercera">PRODUCTO</a></li>
+                            <li class="ed-item"><a href="#cuarta">BENEFICIOS</a></li>
+                            <li class="ed-item"><a href="#quinta">TESTIMONIOS</a></li>
+                            <li class="ed-item"><a href="#sexta">CONTACTO</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="primera">
+        <div class="ed-container full">
+            <div class="ed-item base-60 logoT hasta-web" style="position:relative;">
+                <figure class="logo-top"><img src="img/logo.png" alt=""></figure>
+            </div>
+            <div class="ed-item txt1 base-60 no-padding hasta-web">
+                <p>Reafirmá, reducí e
+                    <br>hidratá naturalmente</p>
+            </div>
+            <div class="ed-item txt2 no-padding hasta-web">
+                <p><i>¡Llevate 15 días de tratamiento gratis!</i></p>
+            </div>
+            <div id="img" class="ed-item img web-70 desde-web">
+                <div class="ed-container">
+                    <div class="ed-item web-50"></div>
+                    <div class="ed-item web-50 txt3">
+                        <p>REAFIRMÁ TU
+                            <br> PIEL Y COMBATÍ
+                            <br> LA CELULITIS
+                            <br> MÁS DIFÍCIL</p>
+                        <p><i>Los resultados pueden variar de persona a persona</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="segunda">
+        <div class="ed-container cont-2">
+            <div class="ed-item web-25 form-top no-padding">
+                <div class="ed-container form-segunda aparecer-arriba" ng-controller="formularioCtrl">
+                    <form action="form.php" class="ed-item form-1 abcenter " method="post" name="formularioTop" ng-submit="formularioTop.$valid">
+                        <div class="ed-container">
+                            <div class="ed-item llama-bot desde-web">
+                                <p>LLAMANOS HOY AL
+                                    <br><span>(011)</span><strong>2222-2222</strong>
+                                </p>
+                            </div>
+                            <div class="de-item consulta desde-web">
+                                <p><i>HACÉ TU CONSULTA<br>CON NUESTRO ASESOR</i></p>
+                            </div>
+                            <div class="ed-item centro no-padding">
+                                <div class="btn-llamar" data-tel="2222-2222"></div>
+                            </div>
+                            <div class="ed-item no-padding">
+                                <div class="input">
+                                    <input type="text" name="nombre" ng-model="formData.nombre" placeholder="Nombre y Apellido" ng-minlength="2" required>
+                                    <span class="showMe" ng-if="formularioTop.$dirty && formularioTop.nombre.$error.minlength">Tu Nombre es requerido</span>
+                                </div>
+                            </div>
+                            <div class="ed-item no-padding">
+                                <div class="input">
+                                    <input type="email" name="email" ng-model="formData.email" placeholder="E-mail" ng-pattern="/^([0-9a-zA-Z_]([-.\w]*[0-9a-zA-Z_.-])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/" required>
+                                    <span class="showMe" ng-if="formularioTop.$dirty && formularioTop.email.$error.pattern">Colocá un mail válido</span>
+                                </div>
+                            </div>
+                            <div name="code" class="ed-item no-padding web-40">
+                                <div class="input">
+                                    <input type="number" name="cod" ng-model="formData.cod" ng-maxlength="5" ng-minlength="2" placeholder="Cod. Área" required/>
+                                    <span name="cod1" class="showMe" ng-if="formularioTop.$dirty && formularioTop.cod.$error.minlength">El código es muy corto</span>
+                                </div>
+                            </div>
+                            <div name="numero" class="ed-item no-padding web-55">
+                                <div class="input">
+                                    <input type="number" name="telefono" ng-model="formData.telefono" ng-minlength="6" placeholder="Teléfono" required/>
+                                    <span name="num" class="showMe" ng-if="formularioTop.$dirty && formularioTop.telefono.$error.minlength">Colocá un teléfono válido</span>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <div class="ed-item no-padding">
+                                    <input id="submit" class="btn-sub1" type="submit" value="PEDILO YA" ng-disabled="formularioTop.$invalid">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="ed-item llama-bot hasta-web">
+                    <p>LLAMANOS HOY AL
+                        <br><span>(011)</span><strong>2222-2222</strong>
+                    </p>
+                </div>
+                <div class="de-item consulta hasta-web">
+                    <p>HACÉ TU CONSULTA
+                        <br>CON NUESTRO ASESOR</p>
+                </div>
+                <div class="ed-item jamas desde-web">
+                    <div class="ed-container">
+                        <div class="ed-item base-15 no-padding">
+                            <figure class="ico-candado "><img src="img/candadoB.png" alt=""></figure>
+                        </div>
+                        <div class="ed-item base-85 no-padding">
+                            <p>Jamás compartiremos tu información personal con nadie, sólo la utilizaremos para responder tu consulta.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ed-item jamas base-80 centro hasta-web">
+                    <div class="ed-container">
+                        <div class="ed-item base-15 no-padding">
+                            <figure class="ico-candado "><img src="img/candado2.png" alt=""></figure>
+                        </div>
+                        <div class="ed-item base-85 no-padding">
+                            <p>Jamás compartiremos tu información personal con nadie, sólo la utilizaremos para responder tu consulta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tercera">
+        <div class="ed-container  cont3">
+            <div class="ed-item base-60">
+            </div>
+            <div class="ed-item base-40 logo no-padding hasta-web">
+                <figure><img src="img/logo.png" alt=""></figure>
+            </div>
+            <div class="ed-item txt">
+                <div class="ed-container cross-center">
+                    <div class="ed-item txt1 hasta-web">
+                        <p>
+                            La adiposidad localizada en caderas, glúteos y muslos genera en las mujeres un gran malestar porque es muy difícil de combatir.
+                            <br>
+                            <br>
+                            <img class="hasta-web" src="img/pack.png" alt="" style="float:left;
+                        float: right;
+                        width: 100px;
+                        margin: 50px 0 0 0;"> Lipodrene va directo a esos depósitos de grasa localizados. Contiene Redumodel, un extracto con sinefrina (naranja amarga) y cafeína que quema las grasas, estimula la eliminación de lípidos y tiene efecto drenante.
+                        </p>
+                        <!--  <figure><img src="img/pack.png" alt=""></figure> -->
+                    </div>
+                    <div class="ed-item txt3 cross-center desde-web web-60">
+                        <div class="ed-container">
+                            <div class="ed-item cross-center web-70">
+                                <p>La adiposidad localizada en caderas, glúteos y muslos es mucho más frecuente en mujeres que en hombres, y si bien es menos peligrosa para la salud que la adiposidad que se localiza en el abdomen (más frecuente en hombres), también presenta enfermedades asociadas y genera en las mujeres un gran malestar porque es muy difícil de combatir.</p>
+                            </div>
+                            <div class="ed-item img web-30 no-padding">
+                                <figure><img src="img/pack.png" alt=""></figure>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ed-item txt2 web-40 no-padding">
+                        <figure><img src="img/bot2.png" alt=""></figure>
+                        <p class="hasta-web"><i>Los resultados pueden variar de persona a persona</i>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="separador0" class="base-90 centro hasta-web">
+        <p>Envío a domicilio ¡Estés donde estés!</p>
+        <p><i>OFERTA ONLINE ÚNICAMENTE</i></p>
+    </div>
+    <div id="cuarta">
+        <div class="ed-container  cont4 full">
+            <div class="ed-item tx">
+                <div class="ed-container">
+                    <div class="ed-item txt hasta-web">
+                        <p>
+                            Lipodrene te ayuda a reducir tus medidas, reafirmar tu piel y disminuir gradualmente la celulitis.
+                        </p>
+                    </div>
+                    <div class="ed-item txt2 desde-web web-80 center">
+                        <p>Lipodrene trabaja directo sobre esos depósitos de grasa localizados. Contiene Redumodel, un compuesto con sinefrina y cafeína que quema las grasas, transforma las calorías en energía, estimula la eliminación de lípidos y además tiene efecto drenante y anticelulítico.</p>
+                        <p><i>Lipodrene con Redumodel te ayuda a reducir tus medidas, reafirmar tu piel y disminuir gradualmente la celulitis.</i> </p>
+                    </div>
+                </div>
+            </div>
+            <div class="ed-item item-cont center">
+                <div class="ed-container web-80 cont-item">
+                    <div class="ed-item item web-30 aparecer-arriba">
+                        <p>Muslos</p>
+                        <figure><img src="img/ayd-01.png " alt=""></figure>
+                    </div>
+                    <div class="ed-item item web-30 aparecer-arriba">
+                        <p>Caderas</p>
+                        <figure><img src="img/ayd-02.png" alt=""></figure>
+                    </div>
+                    <div class="ed-item item web-30 aparecer-arriba">
+                        <p>Cintura</p>
+                        <figure><img src="img/ayd-03.png" alt=""></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="separador1">
+        <p>
+            <i>Siempre es un buen momento para <br class="hasta-web"> empezar, pedilo hoy!</i>
+        </p>
+    </div>
+    <div id="quinta">
+        <div class="ed-container cont-5">
+            <div class="ed-item tit hasta-web">
+                <p>TESTIMONIO</p>
+            </div>
+            <div class="ed-item testi web-30 aparecer-arriba">
+                <div class="ed-container">
+                    <div class="ed-item foto">
+                        <figure><img src="img/testi-01.png" alt=""></figure>
+                    </div>
+                    <div class="ed-item name">
+                        <p>Miriam</p>
+                        <p>35 años. Banfield</p>
+                    </div>
+                    <div class="ed-item desc">
+                        <p>Estuve a punto de optar por la cirugía. Ya no soportaba más ese rollito horrible que se me notaba con cualquier remera. Llegó un momento en que ni me quería mirar al espejo porque toda la ropa me quedaba mal. Leí sobre este producto y quedé sorprendida; llamé y lo compré. Estoy feliz, no puedo creer cómo cambió mi cuerpo y en tan poco tiempo. Ahora lo disfruto comprándome ropa. </p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="ed-item web-20 desde-web"></div> -->
+            <div class="ed-item testi web-30 aparecer-arriba desde-web">
+                <div class="ed-container">
+                    <div class="ed-item foto">
+                        <figure><img src="img/testi-02.png" alt=""></figure>
+                    </div>
+                    <div class="ed-item name">
+                        <p>Sofía</p>
+                        <p>26 años. San Telmo</p>
+                    </div>
+                    <div class="ed-item desc">
+                        <p>Llegado el verano, cuando por primera vez me puse la bikini, me veía tan fea que me deprimía. Lamentablemente, nada de lo que intentaba funcionaba. Cuando probé este producto creí que era uno más, pero ¡realmente me sorprendió! Estoy tan feliz con los resultados que se lo recomiendo a todas las mujeres. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sexta">
+        <div class="ed-container full cont-6">
+            <div class="ed-item form-bot no-padding">
+                <div class="fb-like desde-web" data-href="https://www.facebook.com/MundoNaturalHoy?fref=ts" data-layout="button_count" style="position: absolute;bottom: 90%;right: 35%;"></div>
+                <div class="ed-container form-segunda web-90 aparecer-arriba" ng-controller="formularioCtrl">
+                    <form action="form.php" class="ed-item web-55 form-1 abcenter " method="post" name="formularioTop" ng-submit="formularioTop.$valid">
+                        <div class="ed-container">
+                            <div class="ed-item llama-bot">
+                                <p>LLAMANOS HOY AL
+                                    <br><span>(011)</span><strong>2222-2222</strong>
+                                </p>
+                            </div>
+                            <div class="de-item consulta">
+                                <p>HACÉ TU CONSULTA
+                                    <br class="hasta-web"> CON NUESTRO ASESOR</p>
+                            </div>
+                            <div class="ed-item centro no-padding">
+                                <div class="btn-llamar centro hasta-web"></div>
+                            </div>
+                            <div class="ed-item no-padding web-50">
+                                <div class="input">
+                                    <input type="text" name="nombre" ng-model="formData.nombre" placeholder="Nombre y Apellido" ng-minlength="2" required>
+                                    <span class="showMe" ng-if="formularioTop.$dirty && formularioTop.nombre.$error.minlength">Tu Nombre es requerido</span>
+                                </div>
+                            </div>
+                            <div class="ed-item no-padding web-50">
+                                <div class="input">
+                                    <input type="email" name="email" ng-model="formData.email" placeholder="E-mail" ng-pattern="/^([0-9a-zA-Z_]([-.\w]*[0-9a-zA-Z_.-])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/" required>
+                                    <span class="showMe" ng-if="formularioTop.$dirty && formularioTop.email.$error.pattern">Colocá un mail válido</span>
+                                </div>
+                            </div>
+                            <div name="code" class="ed-item no-padding web-50">
+                                <div class="input">
+                                    <input type="number" name="cod" ng-model="formData.cod" ng-maxlength="5" ng-minlength="2" placeholder="Cod. Área" required/>
+                                    <span name="cod1" class="showMe" ng-if="formularioTop.$dirty && formularioTop.cod.$error.minlength">El código es muy corto</span>
+                                </div>
+                            </div>
+                            <div name="numero" class="ed-item no-padding web-50">
+                                <div class="input">
+                                    <input type="number" name="telefono" ng-model="formData.telefono" ng-minlength="6" placeholder="Teléfono" required/>
+                                    <span name="num" class="showMe" ng-if="formularioTop.$dirty && formularioTop.telefono.$error.minlength">Colocá un teléfono válido</span>
+                                </div>
+                            </div>
+                            <div class="ed-item jamas base-80 centro hasta-web">
+                                <div class="ed-container">
+                                    <div class="ed-item base-15 no-padding">
+                                        <figure class="ico-candado "><img src="img/candadow.png" alt=""></figure>
+                                    </div>
+                                    <div class="ed-item base-85 no-padding">
+                                        <p>Jamás compartiremos tu información personal con nadie, sólo la utilizaremos para responder tu consulta.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <div class="ed-item no-padding">
+                                    <input id="submit" class="btn-sub1" type="submit" value="PEDILO YA" ng-disabled="formularioTop.$invalid">
+                                </div>
+                            </div>
+                            <div class="ed-item jamas base-80  web-60 centro desde-web">
+                                <div class="ed-container">
+                                    <div class="ed-item base-15 no-padding">
+                                        <figure class="ico-candado "><img src="img/candadow.png" alt=""></figure>
+                                    </div>
+                                    <div class="ed-item base-85 no-padding">
+                                        <p>Jamás compartiremos tu información personal con nadie, sólo la utilizaremos para responder tu consulta.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ed-item pack desde-web">
+                                <figure><img src="img/pack.png" alt=""></figure>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="ed-item pack hasta-web">
+                        <figure><img src="img/pack.png" alt=""></figure>
+                    </div>
+                    <div class="ed-item web-5"></div>
+                    <div class="ed-item web-60 form-bot-r desde-web">
+                    </div>
+                    <div class="ed-item web-5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="">
+        <div class="ed-container cont-foot">
+            <div class="ed-item pie">
+                <div class="ed-container">
+                    <div class="ed-item web-20 logo desde-web">
+                        <figure><img src="img/logo.png" alt=""></figure>
+                    </div>
+                    <div class="ed-item web-80 no-padding">
+                        <div class="ed-container">
+                            <div class="ed-item foot hasta-web">
+                                <p><strong>Ante cualquier duda consulte a su médico y/o farmacéutico. No es un medicamento.</strong> Las imágenes fueron retocadas y/o modificadas digitalmente. Los resultados pueden variar de persona en persona.
+                                </p>
+                            </div>
+                            <div class="ed-item foot desde-web">
+                                <p>Los testimonios y comentarios de nuestros clientes son verídicos, redactados por cada uno de ellos y certificados ante escribano público. Ante la menor duda consulte a su médico y/o farmacéutico.
+                                </p>
+                            </div>
+                            <div class="ed-item foot1 hasta-web">
+                                <p>Términos, condiciones y políticas de privacidad.
+                                    <br> LIPODRENE Copyright © 2016 - All Rights Reserved. Todos los derechos reservados.
+                                </p>
+                            </div>
+                            <div class="ed-item foot1 desde-web">
+                                <div class="ed-container">
+                                    <div class="ed-item">
+                                        <p><a href="terminos.html">TÉRMINOS, CONDICIONES Y POLÍTICAS DE PRIVACIDAD</a></p>
+                                    </div>
+                                    <div class="ed-item web-30">
+                                        <p>LIPODRENE COPYRIGHT © 2016</p>
+                                    </div>
+                                    <div class="ed-item web-30">
+                                        <p>ALL RIGHTS RESERVED</p>
+                                    </div>
+                                    <div class="ed-item web-30">
+                                        <p>TODOS LOS DERECHOS RESERVADOS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="top" style="display: -webkit-flex;">
+        <span class="icon-arriba"></span>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="js/easing.js"></script>
+    <script src="js/script.js"></script>
+    <script src=js/app.js></script>
+</body>
+
+</html>
